@@ -8,8 +8,8 @@ function Header() {
     //   className="bg-image bg-cover bg-center h-screen w-full"
     //   style={{ background: "url(foodanime)" }}
     // >
-    <div className="header h-[34vw] my-8 mx-auto relative bg-contain w-[70vw] rounded-lg ">
-      <div className=" absolute flex flex-col items-start gap:[1.5vw] max-w-[50%] bottom-[10%] left-[6vw]  gap-7">
+    <div className="header h-[34vw] my-8 mx-auto relative bg-contain w-[70vw] rounded-lg mb-0 pb-0 ">
+      <div className=" absolute flex flex-col items-start gap:[1.5vw] max-w-[50%] bottom-[10%] left-[6vw]  gap-7 animate-fade-in">
         <h2 className="font-medium text-white text-6xl">
           Order your favourite food here
         </h2>

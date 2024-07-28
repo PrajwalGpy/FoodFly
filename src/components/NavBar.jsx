@@ -11,11 +11,11 @@ export const NavBar = () => {
   let [isMenu, setIsMenu] = useState("menu");
 
   return (
-    <nav className="fixed z-50 w-screen  px-16 shadow-xl bg-white">
+    <nav className="fixed z-50 w-screen h-20 px-16 shadow-xl bg-white mb-0 pb-0">
       {/* DeskTop & tablet  */}
       <div className=" md:flex w-full h-full justify-between items-center">
         <Link to={"/"}>
-          <div className="flex  items-center gap-2 w-40 h-32">
+          <div className="flex  items-center gap-1 w-24 h-24">
             <img
               src={logo}
               className="w-full  h-full object-cover"
@@ -69,7 +69,7 @@ export const NavBar = () => {
           </ul>
           <div className=" relative flex items-center justify-center ml-7">
             <LuShoppingCart className=" text-black text-2xl   cursor-pointer" />
-            <div className=" absolute -top-2 left-4  w-4 h-4  rounded-full  bg-red-600  flex items-center justify-center">
+            <div className="  absolute -top-2 left-4  w-4 h-4  rounded-full  bg-red-600  flex items-center justify-center">
               <p className=" text-sm font-semibold  text-white "> 2</p>
             </div>
           </div>
