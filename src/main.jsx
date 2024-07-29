@@ -12,12 +12,8 @@ let AppRouter = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/Home",
-        element: <Home />,
-      },
-      {
         path: "/",
-        element: <Header />,
+        element: <Home />,
       },
     ],
   },
