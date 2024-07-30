@@ -7,7 +7,7 @@ const RestaurantMenuCard = (props) => {
   let { data } = props;
   let { name, cuisines, costForTwo, cloudinaryImageId, avgRating } = data?.info;
   return (
-    <div className="gap-10 w-[240px] hover:scale-90 transition-transform m-6 relative cursor-pointer">
+    <div className="gap-10 w-[240px] hover:scale-90 transition-transform m-4 relative cursor-pointer shadow-md p-3 rounded-sm">
       <div className="object-contain w-60 h-[10rem]">
         <img
           src={imageUrl + cloudinaryImageId}

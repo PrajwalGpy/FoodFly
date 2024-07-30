@@ -5,6 +5,7 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import Header from "./components/Header.jsx";
+import RestorentCardMrnudeatil from "./components/RestorentCardMrnudeatil.jsx";
 
 let AppRouter = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ let AppRouter = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/restMenu/:resId",
+        element: <RestorentCardMrnudeatil />,
       },
     ],
   },

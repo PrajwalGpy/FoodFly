@@ -27,19 +27,46 @@ export const NavBar = () => {
         </Link>
         <div className="navbar-menu flex items-center gap-6">
           <ul className="flex items-center gap-14 ml-auto">
-            {["HOME", "menu", "ABOUT", "SERVICES"].map((menuItem) => (
-              <li
-                key={menuItem}
-                onClick={() => setIsMenu(menuItem)}
-                className={
-                  isMenu === menuItem
-                    ? "border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-                    : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-                }
-              >
-                {menuItem}
-              </li>
-            ))}
+            <li
+              onClick={() => setIsMenu("HOME")}
+              className={
+                isMenu === "HOME"
+                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+              }
+            >
+              HOME
+            </li>
+            <li
+              onClick={() => setIsMenu("menu")}
+              className={
+                isMenu === "menu"
+                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+              }
+            >
+              MENU
+            </li>
+            <li
+              onClick={() => setIsMenu("ABOUT")}
+              className={
+                isMenu === "ABOUT"
+                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+              }
+            >
+              ABOUT
+            </li>
+            <li
+              onClick={() => setIsMenu("SERVICES")}
+              className={
+                isMenu === "SERVICES"
+                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+              }
+            >
+              SERVICES
+            </li>
           </ul>
           <div className="relative flex items-center justify-center ml-7">
             <LuShoppingCart className="text-black text-2xl cursor-pointer" />
@@ -57,14 +84,14 @@ export const NavBar = () => {
       </div>
 
       {/* Mobile */}
-      <div className="lg:hidden flex items-center justify-between w-full h-full">
+      <div className="lg:hidden flex items-center justify-between w-full h-full ">
         <div onClick={handleMenuClick}>
           <CgMenu className="text-2xl cursor-pointer" />
         </div>
         <Link to={"/"}>
-          <div className="flex items-center justify-center w-24 h-24">
+          <div className="flex items-center justify-center w-14 h-14">
             <img src={logo} className="w-full h-full object-cover" alt="Logo" />
-            <p className="text-4xl font-bold text-slate-950">FOODFLY</p>
+            <p className="text-2xl font-bold text-slate-950">FOODFLY</p>
           </div>
         </Link>
         <div className="flex items-center">
@@ -74,35 +101,65 @@ export const NavBar = () => {
               <p className="text-sm font-semibold text-white">2</p>
             </div>
           </div>
-          <motion.img
-            whileTap={{ scale: 0.6 }}
-            src={avatar}
-            alt="userprofile"
-            className="avatar w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-lg cursor-pointer ml-7"
-          />
         </div>
       </div>
 
       {/* Mobile Dropdown Menu */}
       {isDropdownVisible && (
-        <div className="lg:hidden flex flex-col items-center bg-white shadow-xl w-[50%] absolute top-20 left-0">
-          <ul className="flex flex-col items-center w-full">
-            {["HOME", "menu", "ABOUT", "SERVICES"].map((menuItem) => (
-              <li
-                key={menuItem}
-                onClick={() => {
-                  setIsMenu(menuItem);
-                  setIsDropdownVisible(false);
-                }}
-                className={
-                  isMenu === menuItem
-                    ? "border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out w-full text-center py-2"
-                    : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out w-full text-center py-2"
-                }
-              >
-                {menuItem}
-              </li>
-            ))}
+        <div className="lg:hidden flex flex-col items-center bg-white shadow-xl w-[30%] absolute top-20 left-0">
+          <ul className="flex flex-col items-start w-full h-full p-7">
+            <li
+              onClick={() => {
+                setIsMenu("HOME");
+                setIsDropdownVisible(false);
+              }}
+              className={
+                isMenu === "HOME"
+                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+              }
+            >
+              HOME
+            </li>
+            <li
+              onClick={() => {
+                setIsMenu("MENU");
+                setIsDropdownVisible(false);
+              }}
+              className={
+                isMenu === "menu"
+                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+              }
+            >
+              MENU
+            </li>
+            <li
+              onClick={() => {
+                setIsMenu("ABOUT");
+                setIsDropdownVisible(false);
+              }}
+              className={
+                isMenu === "ABOUT"
+                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+              }
+            >
+              ABOUT
+            </li>
+            <li
+              onClick={() => {
+                setIsMenu("SERVICES");
+                setIsDropdownVisible(false);
+              }}
+              className={
+                isMenu === "SERVICES"
+                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out "
+              }
+            >
+              SERVICES
+            </li>
           </ul>
         </div>
       )}
