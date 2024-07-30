@@ -6,6 +6,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import Shrimran from "./Shrimran";
 import { Link } from "react-router-dom";
 
+
 function RestaurantMenu() {
   const [restaurants, setRestaurants] = useState([]);
   const [search, setSearch] = useState("");
