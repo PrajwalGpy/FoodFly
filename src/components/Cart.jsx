@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { CartContext } from "../utils/CartContext";
 import { ITEM_IMG_CDN_URL } from "../utils/constants";
-
+import shopping from "../Images/shopping.webp";
+import { Link } from "react-router-dom";
 const Cart = () => {
   const {
     cart,
@@ -30,10 +31,19 @@ const Cart = () => {
 
   return (
     <div className="my-14">
-      <h2 className=" text-center text-4xl font-bold mt-4 md:hidden">Cart</h2>
+      <h2 className=" text-center text-4xl font-bold mt-4 md:hidden"></h2>
       <div>
         {cart.length === 0 ? (
-          <p>No items in cart</p>
+          <div className="flex flex-col items-center">
+            <img src={shopping} alt="shoppingIcon" />
+            <p className="text-lg font-bold">Cart Is Empty </p>
+            <p className="text-lg font-bold">Continue Shoppin</p>
+            <Link to={"/"}>
+              <button className="text-white bg-black py-1 px-3 rounded-lg">
+                MENU
+              </button>
+            </Link>
+          </div>
         ) : (
           <>
             <div className=" flex flex-col items-center  md:h-[500px] md:flex md:flex-row-reverse">

@@ -21,6 +21,7 @@ export const CartProvider = ({ children }) => {
       }
     });
   };
+  console.log(cart.length);
 
   const removeFromCart = (itemName) => {
     setCart((prevCart) => prevCart.filter((item) => item.name !== itemName));

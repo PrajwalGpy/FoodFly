@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import logo from "..//Images/logo.png";
 import { LuShoppingCart } from "react-icons/lu";
 import { CgMenu } from "react-icons/cg";
 import avatar from "..//Images/avatar.png";
 import { motion } from "framer-motion";
+import { CartContext } from "../utils/CartContext";
 import { Link } from "react-router-dom";
+import LoginPopup from "./LoginPopup";
 
-export const NavBar = () => {
+export const NavBar = ({ setShowLogin }) => {
+  const { cart } = useContext(CartContext);
   const [isMenu, setIsMenu] = useState("menu");
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
@@ -50,7 +53,7 @@ export const NavBar = () => {
                 MENU
               </li>
             </Link>
-            <Link to={"/ABOUT"}>
+            <Link to={"/"}>
               <li
                 onClick={() => setIsMenu("ABOUT")}
                 className={
@@ -62,7 +65,7 @@ export const NavBar = () => {
                 ABOUT
               </li>
             </Link>
-            <Link to={"/SERVICES"}>
+            <Link to={"/"}>
               <li
                 onClick={() => setIsMenu("SERVICES")}
                 className={
@@ -79,16 +82,20 @@ export const NavBar = () => {
             <div className="relative flex items-center justify-center ml-7">
               <LuShoppingCart className="text-black text-2xl cursor-pointer" />
               <div className="absolute -top-2 left-4 w-4 h-4 rounded-full bg-red-600 flex items-center justify-center">
-                <p className="text-sm font-semibold text-white">2</p>
+                <p className="text-sm font-semibold text-white">
+                  {cart.length}
+                </p>
               </div>
             </div>
           </Link>
-          <motion.img
-            whileTap={{ scale: 0.6 }}
-            src={avatar}
-            alt="userprofile"
-            className="avatar w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-lg cursor-pointer ml-7"
-          />
+          <div onClick={() => setShowLogin((prev) => !prev)}>
+            <motion.img
+              whileTap={{ scale: 0.6 }}
+              src={avatar}
+              alt="userprofile"
+              className="avatar w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-lg cursor-pointer ml-7"
+            />
+          </div>
         </div>
       </div>
 
@@ -108,7 +115,9 @@ export const NavBar = () => {
             <div className="relative flex items-center justify-center ml-7">
               <LuShoppingCart className="text-black text-2xl cursor-pointer" />
               <div className="absolute -top-2 left-4 w-4 h-4 rounded-full bg-red-600 flex items-center justify-center">
-                <p className="text-sm font-semibold text-white">2</p>
+                <p className="text-sm font-semibold text-white">
+                  {cart.length}
+                </p>
               </div>
             </div>
           </div>
@@ -119,21 +128,22 @@ export const NavBar = () => {
       {isDropdownVisible && (
         <div className="lg:hidden flex flex-col items-center bg-white shadow-xl w-[30%] absolute top-20 left-0">
           <ul className="flex flex-col items-start w-full h-full p-7">
-            <Link to={"/"}></Link>
-            <li
-              onClick={() => {
-                setIsMenu("HOME");
-                setIsDropdownVisible(false);
-              }}
-              className={
-                isMenu === "HOME"
-                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-              }
-            >
-              HOME
-            </li>
-            <Link to={"/MENU"}>
+            <Link to={"/"}>
+              <li
+                onClick={() => {
+                  setIsMenu("HOME");
+                  setIsDropdownVisible(false);
+                }}
+                className={
+                  isMenu === "HOME"
+                    ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                    : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                }
+              >
+                HOME
+              </li>
+            </Link>
+            <Link to={"/"}>
               <li
                 onClick={() => {
                   setIsMenu("MENU");
@@ -148,7 +158,7 @@ export const NavBar = () => {
                 MENU
               </li>
             </Link>
-            <Link to={"/ABOUT"}>
+            <Link to={"/"}>
               <li
                 onClick={() => {
                   setIsMenu("ABOUT");
@@ -163,7 +173,7 @@ export const NavBar = () => {
                 ABOUT
               </li>
             </Link>
-            <Link to={"/SERVICES"}>
+            <Link to={"/"}>
               <li
                 onClick={() => {
                   setIsMenu("SERVICES");

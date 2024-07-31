@@ -5,7 +5,7 @@ import RestaurantMenu from "./RestaurantMenu";
 
 function Home() {
   return (
-    <div>
+    <div className="">
       <Header />
       <ExpolerMenu />
       <RestaurantMenu />
