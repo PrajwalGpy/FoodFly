@@ -30,20 +30,21 @@ const Cart = () => {
 
   return (
     <div className="my-14">
+      <h2 className=" text-center text-4xl font-bold mt-4 md:hidden">Cart</h2>
       <div>
         {cart.length === 0 ? (
           <p>No items in cart</p>
         ) : (
           <>
-            <div className=" h-[500px] flex flex-row-reverse">
-              <div className=" flex w-5/12  overflow-y-scroll ">
-                <div className=" h-2/5">
+            <div className=" flex flex-col items-center  md:h-[500px] md:flex md:flex-row-reverse">
+              <div className=" md:flex md:w-5/12  md:overflow-y-scroll ">
+                <div className=" md:h-2/5">
                   {cart.map((item, index) => (
                     <div
-                      className="flex justify-center border-b-4 p-7 items-center w-full"
+                      className="flex justify-between items-center gap-5 md:flex  border-b-4 p-7  w-full"
                       key={index}
                     >
-                      <div className="w-9/12 flex flex-col items-start p-0">
+                      <div className=" md:w-9/12 md:flex flex-col items-start p-0">
                         <div className="m-0 text-xs text-left  sm:text-lg font-extrabold">
                           {item.name}
                         </div>
@@ -87,8 +88,10 @@ const Cart = () => {
                 </div>
               </div>
 
-              <div className=" mt-4 w-7/12 flex flex-col items-start ">
-                <h2 className="text-4xl font-bold mt-4">Cart</h2>
+              <div className="  mt-4 w-7/12 flex flex-col md:items-start ">
+                <h2 className=" hidden md:flex md:text-4xl md:font-bold md:mt-4">
+                  Cart
+                </h2>
                 <button
                   onClick={handleClearCart}
                   className="bg-red-500 text-white px-3 py-1 rounded mt-2 mb-4"

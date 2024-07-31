@@ -3,6 +3,7 @@ import { Banner_imageUrl } from "../utils/constants";
 import { VscArrowLeft, VscArrowRight } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import { RoundeeShrimran } from "./Shrimran";
+import { swiggy_api_URL } from "../utils/constants";
 
 function ExpolerMenu() {
   const [data, setData] = useState(null);
@@ -21,9 +22,7 @@ function ExpolerMenu() {
 
   useEffect(() => {
     async function fetchData() {
-      let response = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0153961&lng=77.6346399&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      );
+      let response = await fetch(swiggy_api_URL);
       let json = await response.json();
       setData(json);
     }

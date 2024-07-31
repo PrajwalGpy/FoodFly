@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { ITEM_IMG_CDN_URL } from "../utils/constants";
 import { CartContext } from "../utils/CartContext";
+import Shrimran from "./Shrimran"; // Import the Shrimran component
 
 function ResorentmenuCate({ data }) {
   const { addToCart } = useContext(CartContext);
@@ -14,6 +15,11 @@ function ResorentmenuCate({ data }) {
     };
     addToCart(itemInfo);
   };
+
+  // Check if data is empty and display Shrimran
+  if (!data || Object.keys(data).length === 0) {
+    return <Shrimran />;
+  }
 
   return (
     <div className="flex justify-center border-b-4 p-7 items-center w-full">

@@ -7,6 +7,7 @@ import Home from "./components/Home.jsx";
 import Header from "./components/Header.jsx";
 import RestorentCardMrnudeatil from "./components/RestorentCardMrnudeatil.jsx";
 import Cart from "./components/Cart.jsx";
+import RestaurantMenu from "./components/RestaurantMenu.jsx";
 
 let AppRouter = createBrowserRouter([
   {
@@ -20,6 +21,18 @@ let AppRouter = createBrowserRouter([
       {
         path: "/restMenu/:resId",
         element: <RestorentCardMrnudeatil />,
+      },
+      {
+        path: "/MENU",
+        element: <RestaurantMenu />,
+      },
+      {
+        path: "/Cart",
+        element: <Cart />,
+      },
+      {
+        path: "/Cart",
+        element: <Cart />,
       },
       {
         path: "/Cart",

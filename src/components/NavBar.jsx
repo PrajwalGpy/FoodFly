@@ -5,7 +5,6 @@ import { CgMenu } from "react-icons/cg";
 import avatar from "..//Images/avatar.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import "./NavBar.css";
 
 export const NavBar = () => {
   const [isMenu, setIsMenu] = useState("menu");
@@ -27,46 +26,54 @@ export const NavBar = () => {
         </Link>
         <div className="navbar-menu flex items-center gap-6">
           <ul className="flex items-center gap-14 ml-auto">
-            <li
-              onClick={() => setIsMenu("HOME")}
-              className={
-                isMenu === "HOME"
-                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-              }
-            >
-              HOME
-            </li>
-            <li
-              onClick={() => setIsMenu("menu")}
-              className={
-                isMenu === "menu"
-                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-              }
-            >
-              MENU
-            </li>
-            <li
-              onClick={() => setIsMenu("ABOUT")}
-              className={
-                isMenu === "ABOUT"
-                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-              }
-            >
-              ABOUT
-            </li>
-            <li
-              onClick={() => setIsMenu("SERVICES")}
-              className={
-                isMenu === "SERVICES"
-                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-              }
-            >
-              SERVICES
-            </li>
+            <Link to={"/"}>
+              <li
+                onClick={() => setIsMenu("HOME")}
+                className={
+                  isMenu === "HOME"
+                    ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                    : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                }
+              >
+                HOME
+              </li>
+            </Link>
+            <Link to={"/MENU"}>
+              <li
+                onClick={() => setIsMenu("menu")}
+                className={
+                  isMenu === "menu"
+                    ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                    : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                }
+              >
+                MENU
+              </li>
+            </Link>
+            <Link to={"/ABOUT"}>
+              <li
+                onClick={() => setIsMenu("ABOUT")}
+                className={
+                  isMenu === "ABOUT"
+                    ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                    : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                }
+              >
+                ABOUT
+              </li>
+            </Link>
+            <Link to={"/SERVICES"}>
+              <li
+                onClick={() => setIsMenu("SERVICES")}
+                className={
+                  isMenu === "SERVICES"
+                    ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                    : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                }
+              >
+                SERVICES
+              </li>
+            </Link>
           </ul>
           <Link to={"/Cart"}>
             <div className="relative flex items-center justify-center ml-7">
@@ -112,6 +119,7 @@ export const NavBar = () => {
       {isDropdownVisible && (
         <div className="lg:hidden flex flex-col items-center bg-white shadow-xl w-[30%] absolute top-20 left-0">
           <ul className="flex flex-col items-start w-full h-full p-7">
+            <Link to={"/"}></Link>
             <li
               onClick={() => {
                 setIsMenu("HOME");
@@ -125,45 +133,51 @@ export const NavBar = () => {
             >
               HOME
             </li>
-            <li
-              onClick={() => {
-                setIsMenu("MENU");
-                setIsDropdownVisible(false);
-              }}
-              className={
-                isMenu === "menu"
-                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-              }
-            >
-              MENU
-            </li>
-            <li
-              onClick={() => {
-                setIsMenu("ABOUT");
-                setIsDropdownVisible(false);
-              }}
-              className={
-                isMenu === "ABOUT"
-                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-              }
-            >
-              ABOUT
-            </li>
-            <li
-              onClick={() => {
-                setIsMenu("SERVICES");
-                setIsDropdownVisible(false);
-              }}
-              className={
-                isMenu === "SERVICES"
-                  ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
-                  : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out "
-              }
-            >
-              SERVICES
-            </li>
+            <Link to={"/MENU"}>
+              <li
+                onClick={() => {
+                  setIsMenu("MENU");
+                  setIsDropdownVisible(false);
+                }}
+                className={
+                  isMenu === "menu"
+                    ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                    : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                }
+              >
+                MENU
+              </li>
+            </Link>
+            <Link to={"/ABOUT"}>
+              <li
+                onClick={() => {
+                  setIsMenu("ABOUT");
+                  setIsDropdownVisible(false);
+                }}
+                className={
+                  isMenu === "ABOUT"
+                    ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                    : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                }
+              >
+                ABOUT
+              </li>
+            </Link>
+            <Link to={"/SERVICES"}>
+              <li
+                onClick={() => {
+                  setIsMenu("SERVICES");
+                  setIsDropdownVisible(false);
+                }}
+                className={
+                  isMenu === "SERVICES"
+                    ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
+                    : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out "
+                }
+              >
+                SERVICES
+              </li>
+            </Link>
           </ul>
         </div>
       )}
