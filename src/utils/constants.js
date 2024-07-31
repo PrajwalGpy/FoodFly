@@ -7,6 +7,7 @@ export const Banner_imageUrl =
 // Image CDN URL for Restaurant Menu
 export const ITEM_IMG_CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
+  
 
 // Swiggy API to get Restaurant data with foodfire server
 export const swiggy_api_URL =

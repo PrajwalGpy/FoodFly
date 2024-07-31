@@ -68,12 +68,14 @@ export const NavBar = () => {
               SERVICES
             </li>
           </ul>
-          <div className="relative flex items-center justify-center ml-7">
-            <LuShoppingCart className="text-black text-2xl cursor-pointer" />
-            <div className="absolute -top-2 left-4 w-4 h-4 rounded-full bg-red-600 flex items-center justify-center">
-              <p className="text-sm font-semibold text-white">2</p>
+          <Link to={"/Cart"}>
+            <div className="relative flex items-center justify-center ml-7">
+              <LuShoppingCart className="text-black text-2xl cursor-pointer" />
+              <div className="absolute -top-2 left-4 w-4 h-4 rounded-full bg-red-600 flex items-center justify-center">
+                <p className="text-sm font-semibold text-white">2</p>
+              </div>
             </div>
-          </div>
+          </Link>
           <motion.img
             whileTap={{ scale: 0.6 }}
             src={avatar}
@@ -94,14 +96,16 @@ export const NavBar = () => {
             <p className="text-2xl font-bold text-slate-950">FOODFLY</p>
           </div>
         </Link>
-        <div className="flex items-center">
-          <div className="relative flex items-center justify-center ml-7">
-            <LuShoppingCart className="text-black text-2xl cursor-pointer" />
-            <div className="absolute -top-2 left-4 w-4 h-4 rounded-full bg-red-600 flex items-center justify-center">
-              <p className="text-sm font-semibold text-white">2</p>
+        <Link to={"/Cart"}>
+          <div className="flex items-center">
+            <div className="relative flex items-center justify-center ml-7">
+              <LuShoppingCart className="text-black text-2xl cursor-pointer" />
+              <div className="absolute -top-2 left-4 w-4 h-4 rounded-full bg-red-600 flex items-center justify-center">
+                <p className="text-sm font-semibold text-white">2</p>
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
 
       {/* Mobile Dropdown Menu */}
