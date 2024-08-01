@@ -46,8 +46,8 @@ const Cart = () => {
           </div>
         ) : (
           <>
-            <div className=" flex flex-col items-center  md:h-[500px] md:flex md:flex-row-reverse">
-              <div className=" md:flex md:w-5/12  md:overflow-y-scroll ">
+            <div className=" flex flex-col   md:h-[500px] md:flex md:flex-row-reverse">
+              <div className=" md:flex md:w-5/12  md:overflow-y-scroll  md:items-stretch ">
                 <div className=" md:h-2/5">
                   {cart.map((item, index) => (
                     <div

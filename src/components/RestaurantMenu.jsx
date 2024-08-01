@@ -16,23 +16,28 @@ function RestaurantMenu() {
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-      try {
-        let response = await fetch(`${swiggy_api_URL}?page=${page}`);
-        let data = await response.json();
-        if (
-          data.data &&
-          data.data.cards[4]?.card?.card?.gridElements?.infoWithStyle
-            ?.restaurants
-        ) {
-          setRestaurants((prevRestaurants) => [
-            ...prevRestaurants,
-            ...data.data.cards[4]?.card?.card?.gridElements?.infoWithStyle
-              ?.restaurants,
-          ]);
+
+      let response = await fetch(`${swiggy_api_URL}?page=${page}`);
+      let data = await response.json();
+
+      function checkJsonData(jsonData) {
+        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+          let checkData =
+            data?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants;
+          if (checkData !== undefined) {
+            return checkData;
+          }
         }
-      } catch (error) {
-        console.error("Error fetching data:", error);
       }
+
+      const resData = checkJsonData(data);
+      setRestaurants((prevRestaurants) => [...prevRestaurants, ...resData]);
+      setFilteredRestaurants((prevRestaurants) => [
+        ...prevRestaurants,
+        ...resData,
+      ]);
+
       setLoading(false);
     }
     fetchData();

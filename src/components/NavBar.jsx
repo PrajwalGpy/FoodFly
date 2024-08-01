@@ -53,11 +53,11 @@ export const NavBar = ({ setShowLogin }) => {
                 MENU
               </li>
             </Link>
-            <Link to={"/"}>
+            <Link to={"/About"}>
               <li
-                onClick={() => setIsMenu("ABOUT")}
+                onClick={() => setIsMenu("About")}
                 className={
-                  isMenu === "ABOUT"
+                  isMenu === "About"
                     ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
                     : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
                 }
@@ -65,16 +65,16 @@ export const NavBar = ({ setShowLogin }) => {
                 ABOUT
               </li>
             </Link>
-            <Link to={"/"}>
+            <Link to={"/Contact"}>
               <li
-                onClick={() => setIsMenu("SERVICES")}
+                onClick={() => setIsMenu("Contact")}
                 className={
-                  isMenu === "SERVICES"
+                  isMenu === "Contact"
                     ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
                     : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
                 }
               >
-                SERVICES
+                Contact
               </li>
             </Link>
           </ul>
@@ -158,14 +158,14 @@ export const NavBar = ({ setShowLogin }) => {
                 MENU
               </li>
             </Link>
-            <Link to={"/"}>
+            <Link to={"/About"}>
               <li
                 onClick={() => {
-                  setIsMenu("ABOUT");
+                  setIsMenu("About");
                   setIsDropdownVisible(false);
                 }}
                 className={
-                  isMenu === "ABOUT"
+                  isMenu === "About"
                     ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
                     : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
                 }
@@ -173,19 +173,19 @@ export const NavBar = ({ setShowLogin }) => {
                 ABOUT
               </li>
             </Link>
-            <Link to={"/"}>
+            <Link to={"/Contact"}>
               <li
                 onClick={() => {
-                  setIsMenu("SERVICES");
+                  setIsMenu("Contact");
                   setIsDropdownVisible(false);
                 }}
                 className={
-                  isMenu === "SERVICES"
+                  isMenu === "Contact"
                     ? "active: border-b-2 border-black text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out"
                     : "text-base text-black cursor-pointer hover:text-slate-900 duration-100 transition-all ease-in-out "
                 }
               >
-                SERVICES
+                Contact
               </li>
             </Link>
           </ul>

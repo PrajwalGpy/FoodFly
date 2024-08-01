@@ -8,6 +8,8 @@ import Header from "./components/Header.jsx";
 import RestorentCardMrnudeatil from "./components/RestorentCardMrnudeatil.jsx";
 import Cart from "./components/Cart.jsx";
 import RestaurantMenu from "./components/RestaurantMenu.jsx";
+import Contact from "./components/Contact.jsx";
+import About from "./components/About.jsx";
 
 let AppRouter = createBrowserRouter([
   {
@@ -31,12 +33,12 @@ let AppRouter = createBrowserRouter([
         element: <Cart />,
       },
       {
-        path: "/Cart",
-        element: <Cart />,
+        path: "/Contact",
+        element: <Contact />,
       },
       {
-        path: "/Cart",
-        element: <Cart />,
+        path: "/About",
+        element: <About />,
       },
     ],
   },
